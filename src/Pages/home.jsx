@@ -5,6 +5,7 @@ function Home(){
         <div>
             Home
             <p className="text-red-500">This is a paragarph in red.</p>
+            <p className="text-blue-500">This is a paragarph in blue.</p>
         </div>
     )
 }
