@@ -1,12 +1,22 @@
 import React from "react"
+import Banner from "../components/UI/Banner"
+import { useNavigate } from "react-router-dom"
 
 function Home(){
+    const navigate=useNavigate()
+    const transfer=()=>{
+        navigate('/about')
+    }
     return(
+        
         <div>
-            Home
-            <p className="text-red-500">This is a paragarph in red.</p>
-            <p className="text-blue-500">This is a paragarph in blue.</p>
-            <h1>This is heading with h1 element</h1>
+            <Banner title="Home" subtitle="It's a home page" description="It's a description"/>
+
+        <button onClick={()=>{
+            transfer()
+        }}>
+            About Us
+        </button>
         </div>
     )
 }
