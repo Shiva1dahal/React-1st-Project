@@ -7,6 +7,7 @@ import Home from './Pages/home'
 import { Route, Routes } from 'react-router-dom'
 import Toolbar from './components/Navigation/Toolbar'
 import PageNotFound from './Pages/PageNotFound'
+import CardDetails from './Pages/CardDetails'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/card/:id' element={<CardDetails/>}/>
         <Route path='*' element={<PageNotFound/>}/>
       </Routes>
       

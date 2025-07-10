@@ -7,12 +7,23 @@ import Imagefour from '../assets/card-3.jpg'
 import Imagefive from '../assets/card-4.jpg'
 import Imagesix from '../assets/card-5.jpg'
 
+import Card from "../components/UI/Card"
+
 function Home(){
     const navigate=useNavigate()
     const transfer=()=>{
         navigate('/about')
     }
-    const cards = [
+
+    const getData=()=>{
+      try{
+        axios.get('https://gastro-backend.e-aribt.com/api/services').then(res=>{console.log(res)}).catch(err=>{console.log(err)})
+      }catch(error){
+        console.log(error)
+      }
+    }
+
+    const carddata=[
       {
         image: Imagetwo,
         title: "Mountain View",
@@ -38,12 +49,20 @@ function Home(){
         title: "Silent Skyline",
         description: "Towering skyscrapers emerge from a sea of clouds in a monochrome cityscape, blending human achievement with nature's mystery in serene contrast."
       }
-    ];
+     ]
 
     return(
         
         <div>
             <Banner title="Home" subtitle="It's a home page" description="It's a description"/>
+
+          <div className="grid grid-cols-5 gap-6 w-10/12 mx-auto mt-10">
+            {
+              carddata.map((val,i)=>{
+                return <Card title={val.title} description={val.description} image={val.image} key={i} />
+              })
+            }
+          </div>
 
         <button onClick={()=>{
             transfer()
@@ -51,18 +70,6 @@ function Home(){
             About Us
         </button>
 
-        <div className="flex flex-col md:flex-row justify-center gap-6 p-6 bg-gray-100 rounded-2xl">
-      {cards.map((card, idx) => (
-        <div
-          key={idx}className="rounded-2xl shadow-lg overflow-hidden w-full md:w-80 transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl">
-          <img src={card.image} alt={card.title} className="h-48 w-full object-cover" />
-          <div className="p-5">
-            <h2 className="text-xl font-bold mb-2">{card.title}</h2>
-            <p className="text-gray-600">{card.description}</p>
-          </div>
-        </div>
-      ))}
-    </div>
 
         </div>
     )
