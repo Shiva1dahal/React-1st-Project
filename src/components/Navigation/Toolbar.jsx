@@ -13,8 +13,8 @@ export default function Toolbar() {
     {title:"Event",path:'##'},
   ]
   return (
-    <div className='flex justify-between px-10 fixed top-10 left-0 right-0 mx-auto w-11/12 py-4 shadow-2xl bg-blue-500 z-15 rounded-2xl'>
-      <div className='font-bold text-x1'>Training</div>
+    <div className='flex justify-between px-10 fixed top-10 left-0 right-0 mx-auto w-11/12 py-4 shadow-2xl bg-[#2c1ee8] z-15 rounded-2xl'>
+      <div className='font-bold text-orange-600 text-xl'>Training</div>
       <div className='flex gap-6'>
         {
           nav_items.map((val,i)=>{

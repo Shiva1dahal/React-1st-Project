@@ -5,7 +5,7 @@ function Card({title,description,image}) {
     const navigate=useNavigate()
 
   return (
-    <div className="flex flex-col justify-center gap-6 p-6 bg-gray-100 rounded-2xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:bg-green-500">
+    <div className="flex flex-col justify-center p-6 bg-gray-100 rounded-2xl overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:bg-green-500">
 
         <img className="rounded-2xl h-fit w-full md:w-80 " src={image}/>
         <div className="p-5">

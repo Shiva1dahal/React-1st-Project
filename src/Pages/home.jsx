@@ -56,7 +56,7 @@ function Home(){
         <div>
             <Banner title="Home" subtitle="It's a home page" description="It's a description"/>
 
-          <div className="grid grid-cols-5 gap-6 w-10/12 mx-auto mt-10">
+          <div className="grid grid-cols-5 gap-6 w-10/12 mx-auto mt-10 ">
             {
               carddata.map((val,i)=>{
                 return <Card title={val.title} description={val.description} image={val.image} key={i} />
